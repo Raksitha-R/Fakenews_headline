@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template_string
 import threading
+import os
 from utils.dependencies import load_dependencies
 from utils.news_checker import find_similar_news, predict_news, verify_with_gemini
 from utils.news_crawler import schedule_updates
@@ -31,4 +32,5 @@ def check_news():
 if __name__ == "__main__":
     load_dependencies() #model load,tokenizer indexmap
     threading.Thread(target=schedule_updates, daemon=True).start()   #crawler loop
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
