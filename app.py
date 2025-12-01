@@ -20,9 +20,9 @@ def check_news():
     if similar_news:
         gemini_response = verify_with_gemini(news, similar_news)
         if gemini_response.lower() == "no":
-            result = f"Fake (Gemini detected a mismatch with: '{similar_news[:100]}...')"
+            result = f"Fake (Gemini detected a mismatch with: '{similar_news}...')"
         else:
-            result = f"Real (Matched with: '{similar_news[:100]}...')"
+            result = f"Real (Matched with: '{similar_news}...')"
     else:
         predicted = predict_news(news)
         result = f"{predicted} (No similar news found)"

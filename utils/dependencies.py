@@ -33,6 +33,6 @@ def load_dependencies():
     if "Text" not in data.columns:
         raise ValueError("The dataset does not contain a 'Text' column.")
     
-    TOKENIZER = Tokenizer(num_words=5000) 
-    TOKENIZER.fit_on_texts(data["Text"].values)
+    TOKENIZER = Tokenizer(num_words=5000) #identify top 5k freq words and make a index for word and index map
+    TOKENIZER.fit_on_texts(data["Text"].values) #convert dataset into tokens index map(later can be used to convert input news into number seq)
     print("Tokenizer fitted successfully.")
