@@ -20,7 +20,6 @@ def load_dependencies():
     # #Tokenizer.text_to_sequence(text) => gives the numeric op for the input text(based on the mapindex)
 
 
-
     global model, TOKENIZER
     print("Loading model...")
     model = load_model("models/fakenewslogr.h5")

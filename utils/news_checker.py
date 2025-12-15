@@ -61,5 +61,5 @@ def verify_with_gemini(news_input, matched_news):
     1. {news_input}
     2. {matched_news}
     """
-    response = genai.GenerativeModel('gemini-2.0-flash').generate_content(prompt)
+    response = genai.GenerativeModel('gemini-2.5-flash').generate_content(prompt)
     return response.text.strip()

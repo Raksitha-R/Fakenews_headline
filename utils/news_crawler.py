@@ -8,6 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from utils.news_checker import news_data
 
+# dictionary
 WEB_CONFIG = {
     "BBC": {
         "url": "https://www.bbc.com/news",
